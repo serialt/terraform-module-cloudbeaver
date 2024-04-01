@@ -6,13 +6,8 @@ locals {
 
     persistence    = var.persistence
     virtualService = var.virtualService
+    resources = var.resources
   }
-  VolumePermissions = {
-    enabled = false
-  }
-  resources = var.resources
-
-
 }
 
 resource "helm_release" "cloudbeaver" {
