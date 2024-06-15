@@ -1,12 +1,18 @@
 locals {
   cloudbeaver = {
     fullnameOverride = var.name
+    image = {
+      mirror = var.mirror
+      name   = var.image.name
+      tag    = var.image.tag
+    }
+    imagePullSecrets = var.mirror_secret
     tolerations      = var.tolerations
     nodeSelector     = var.nodeSelector
 
     persistence    = var.persistence
     virtualService = var.virtualService
-    resources = var.resources
+    resources      = var.resources
   }
 }
 

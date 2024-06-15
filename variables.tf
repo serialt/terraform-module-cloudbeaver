@@ -13,7 +13,23 @@ variable "chart_name" {
   default = "cloudbeaver"
 
 }
+variable "mirror" {
+  type    = string
+  default = "docker.io/dbeaver"
+}
+variable "mirror_secret" {
+  type    = any
+  default = []
+}
 
+variable "image" {
+  type = any
+  default = {
+    name = "cloudbeaver"
+    tag  = ""
+  }
+
+}
 
 variable "app_version" {
   type    = string
@@ -47,7 +63,7 @@ variable "persistence" {
 variable "virtualService" {
   type = any
   default = {
-    enabled : false
+    enabled = false
   }
 
 }
